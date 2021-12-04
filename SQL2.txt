@@ -1,0 +1,76 @@
+--To create table
+--Good practice to write and execute commands
+--We can create and save the script to replicate or run it again
+--New query
+create table Student
+
+--We can create a table with constraints or without contraints, and add them later on
+--Constraints are: 
+
+--primary key - ensure uniqueness of data, does not allow for duplicate or null values.Primary key can be a combination of two columns
+--Single column may not implement uniqueness, so we can implement composite primary key
+--tables with PK are called strong tables, and those without are called weak tables
+
+--foreign key - when primary key of one table is referenced into another table
+--null values allowed in foreign key
+--we can enter value matching the pk of fk or nothing
+
+--unique - esures uniqueness, and allows null once.
+--cannot be referred as foreign key
+
+--check -checks data for any valid condition
+--a valid condition could be that salary must not be negative
+--can be any condition we specified
+--will be checked when accepting values
+
+--not null - will not allow null values to be entered. Duplicates allowed
+
+--creating table
+create table Course
+(CourseID int,
+CourseName varchar(200) not null, 
+instructor varchar(200))
+
+--adding primary key after creation of table
+--in alter we can add column, drop a column, modify coum or fo the same to constraints
+alter table Course
+add fees decimal
+
+alter table Course
+alter column fees decimal(8,2)
+
+alter table Course
+add constraint chk_fees check (fees>0)
+--When fees in entered, it must be non-zero or gretaer than zero value
+
+alter table Course
+add constraint pk_key primary key(CourseID)
+--We first have to make the colum not null before making it primary
+
+alter table Course
+alter column  CourseID int not null
+
+alter table Course
+add constraint pk_key primary key(CourseID)
+
+alter table Course
+drop constraint pk_key
+
+
+create table Student
+(StudentID int primary key, 
+Name varchar(200) not null,
+Address varchar(300),
+courseID int foreign key references Course(CourseID)
+
+insert into Course values(1011,'Database Systems', 'Anciel', 100000)
+
+select * from Course
+
+insert into Student values(001,'Mansi','Pune',1011)
+
+--updating or deleting referred values
+--we have used a values in some other table as fk, it cannot be deleted
+delete from Course where CourseID=1011
+--This will show error as it is referred in the Student table
+
