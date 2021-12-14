@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id='p1'></p>
+    <script>
+       // Write JS code for to print if arrayElement is even then print square of that 
+	    //number other wise print cube of odd number. 
+
+        //Declaring array with numbers to sort and print respective outcome
+        const nums=[12,33,-4,13,23,-11,63,22,2,0];
+        var caseval=' ';
+
+        //Printing orginal array
+        document.getElementById("p1").innerHTML=nums.join(" ");
+
+        //First checking for even or odd
+        for(let i=0;i<nums.length;i++)
+        {
+            if(nums[i]==0)
+            {
+                var caseval='Zero';
+            }
+            else if(nums[i]%2==0)
+            {
+                var caseval='Even';
+            }
+            else
+            {
+                var caseval='Odd';
+            }
+
+            //switch case for perorming operation
+            switch(caseval)
+            {
+                case 'Even':
+                    document.write(nums[i]+" squared is "+nums[i]*nums[i]+"<br>");
+                    break;
+                case 'Odd':
+                    document.write(nums[i]+" cubed is "+nums[i]*nums[i]*nums[i]+"<br>");
+                    break;
+                case 'Zero':
+                    document.write("Zero not squared or cubed");
+            }
+        }
+
+
+    </script>
+</body>
+</html>

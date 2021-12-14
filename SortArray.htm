@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //Write JS code for sort Array of type number
+
+        //declaring initial array of unsorted numbers
+        const notsort=[33,3424,24,1,23];
+
+        //printing the initial unsorted array
+        document.write("Array before sorting: <br>")
+        for(let i=0;i<notsort.length;i++)
+        {
+            document.write(notsort[i]+"<br>");
+        }
+
+        //Using sort function to sort the array
+        notsort.sort(function(a, b){return a - b});
+
+        //Printing the array after sorting
+        document.write("Array after sorting: <br>")
+        for(let i=0;i<notsort.length;i++)
+        {
+            document.write(notsort[i]+"<br>");
+        }
+
+
+
+    </script>
+</body>
+</html>

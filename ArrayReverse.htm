@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="p1"></p>
+    <p id="p2"></p>
+    <p id="p3"></p>
+    <p id="p4"></p>
+    <script>
+        //Write JS code  for create Array number or string type and reverse it 
+
+        //Printing orginal arrays
+        const nums=[1,2,3];
+        document.getElementById("p1").innerHTML=nums.join(" ");
+
+        const names=['Anne','Boleyn','Catherine'];
+        document.getElementById("p2").innerHTML=names.join(" ");
+
+        //Reversing the numbers array and storing in a new array
+        let revnums=new Array();
+        for(let i=nums.length;i>=0;i--)
+        {
+            revnums.push(nums[i]);
+        }
+        //Printing the reversed array of numbers
+        document.getElementById("p3").innerHTML=revnums.join(" ");
+        
+        //Reversing the names array and storing in a new array
+        let revnames=new Array();
+        for(let i=nums.length;i>=0;i--)
+        {
+            revnames.push(names[i]);
+        }
+        //Printing the reversed array of numbers
+        document.getElementById("p4").innerHTML=revnames.join(" ");
+    </script>
+</body>
+</html>
