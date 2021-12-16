@@ -1,0 +1,33 @@
+<h1>Welcome to the Bill Generator</h1>
+
+Enter Product Name:<input type='text' [(ngModel)]='productName'><br>
+
+Enter Price:<input type='number' [(ngModel)]='price'><br>
+
+Enter Quantity:<input type='number' [(ngModel)]='qty'><br>
+
+Enter Discount:<input type='number' [(ngModel)]='disc'><br>
+
+<button (click)='generateBill()'>Generate Bill</button><br><br>
+
+<table class='table'>
+    <thead>
+        <tr>
+            <th> Product Name </th>
+            <th> Product Price </th>
+            <th> Product Quantity </th>
+            <th> Discount </th>
+            <th> Total Cost </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>{{productName}}</td>
+            <td>{{price}}</td>
+            <td>{{qty}}</td>
+            <td>{{disc}}</td>
+            <td>{{total}}</td>
+        </tr>
+    </tbody>
+</table>
+

@@ -1,0 +1,35 @@
+<h1>Welcome to Marksheet</h1>
+
+Enter Student ID:<input type='text' [(ngModel)]='studID'><br>
+Enter Student Name:<input type='text' [(ngModel)]='studentName'><br>
+
+Enter Maths marks:<input type='number' [(ngModel)]='mathMarks'><br>
+Enter Physics marks:<input type='number' [(ngModel)]='phyMarks'><br>
+Enter Chemistry marks:<input type='number' [(ngModel)]='chemMarks'><br>
+
+<button (click)='calculateMarks()'>Calculate Percent</button><br><br>
+
+<table class='table'>
+    <thead>
+        <tr>
+            <th> Student ID </th>
+            <th> Student Name </th>
+            <th> Maths Marks </th>
+            <th> Physics Marks </th>
+            <th> Chemistry Marks </th>
+            <th> Total Percentage </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>{{studID}}</td>
+            <td>{{studentName}}</td>
+            <td>{{mathMarks}}</td>
+            <td>{{phyMarks}}</td>
+            <td>{{chemMarks}}</td>
+            <td>{{percent | percent}}</td>
+        </tr>
+    </tbody>
+</table>
+
+
